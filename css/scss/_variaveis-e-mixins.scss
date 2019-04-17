@@ -1,0 +1,62 @@
+//Cores
+$cor-primaria: #000;
+$cor-secundaria: #ef9f10;
+
+
+//Fontes
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+$fonte-1: 'Roboto', sans-serif;
+$fonte-2: 'Slabo 27px', serif;
+
+@function em($pixel, $context: 16){
+    @return $pixel / $context + em;
+}
+
+@mixin tipo-1($size){
+    font-family: $fonte-1;
+    @if $size == 18{
+        font-size: em(18);
+        line-height: em(30, 18);
+    }    
+    @else if $size == 40{
+        font-size: em(40);
+    }
+}
+
+@mixin tipo-2($size){
+    font-family: $fonte-2;
+    @if $size == 14{
+        font-size: em(14);
+    }
+    @else if $size == 16{
+        font-size: em(16);
+        line-height: em(21, 16);
+    }
+    @else if $size == 24{
+        font-size: em(24);
+        line-height: em(30, 24);
+    }
+}
+
+//Mixin de media querie
+$l-device: 1200px;
+$m-device: 760px;
+$s-device: 480px;
+
+@mixin d($size){
+    @if $size == l {
+        @media screen and (min-width: #{$l-device}){
+            @content;
+        }        
+    }
+    @else if $size == m {
+        @media screen and (min-width: #{$m-device}) and (max-width: #{$l-device} - 1){
+            @content;
+        }        
+    }@else if $size == s {
+        @media screen and (max-width: #{$m-device} - 1){
+            @content;
+        }        
+    }
+}

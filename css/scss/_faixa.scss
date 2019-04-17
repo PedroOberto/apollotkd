@@ -1,0 +1,105 @@
+.menu-faixas{
+    .conteudo_menu_faixas{
+        position: fixed;
+        left: -100px;
+        ul{
+            text-align: center;
+            li{            
+                background: $cor-secundaria;
+                border: 2px solid #000;
+                width: 130px;
+                height: 40px;
+                transition: all 0.4s;
+                text-transform:capitalize;
+                -webkit-transform: skew(-20deg);
+                    -ms-transform: skew(-20deg);
+                        transform: skew(-20deg);
+                &:hover{
+                    width: 250px;
+                    a{
+                        display: block;
+                    }
+                }
+                a{
+                    padding: 10px 10px 10px 75px;
+                    float: right;
+                    color: #fff;
+                    display: none;
+                    -webkit-transform: skew(20deg); 
+                        -ms-transform: skew(20deg);
+                            transform: skew(20deg);                    
+                }
+            }
+        }
+        [class^="faixa-branca"]{
+            background-color: #fff;
+        }
+        [class^="faixa-amarela"]{
+            background-color: yellow;
+        }
+        [class^="faixa-amarela-verde"]{
+            background-image: linear-gradient(yellow 50%, green 50%)
+        }
+        [class^="faixa-verde"]{
+            background-color: green;
+        }
+        [class^="faixa-verde-azul"]{
+            background-image: linear-gradient(green 50%, blue 50%)
+        }
+        [class^="faixa-azul"]{
+            background-color: blue;
+        }
+        [class^="faixa-azul-vermelha"]{
+            background-image: linear-gradient(blue 50%, red 50%)
+        }
+        [class^="faixa-vermelha"]{
+            background-color: red;
+        }
+        [class^="faixa-vermelha-preta"]{
+            background-image: linear-gradient(red 50%, black 50%)
+        }
+        
+    }
+}
+
+.faixa{
+    display: none;
+    &:target {
+        display: block
+    }
+    div{
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px 10px;
+        top: -15px;
+        position: relative;
+    }
+    p{
+        margin: 15px;
+    }
+     ul{
+        li{
+            margin: 15px;
+        }
+    }
+    span{
+        @include tipo-2(14);
+        letter-spacing: 2px;
+        display: table;
+        margin: 0 auto;
+    }
+    video{
+        margin: 10px auto;
+        width: 100%;
+        display: block;
+        @include d(l){
+            width: 60%;
+        }
+    }
+    table{
+        td{
+            padding: 5px;            
+        }
+    }
+    
+}
+
